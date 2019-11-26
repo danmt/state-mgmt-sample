@@ -1,14 +1,14 @@
-export const itemsReducer = (state = {}, action) => {
+export const reducer = (state = { test: null }, action) => {
   switch (action.type) {
     case 'test':
-      console.log('test action called');
-      return state;
+      return { test: true };
 
     case 'done':
-      console.log('test done');
-      return state;
+      return { test: false };
 
     default:
       return state;
   }
 };
+
+export const selectItemsTest = (items: any) => items.test;
