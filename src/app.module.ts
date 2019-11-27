@@ -1,8 +1,7 @@
 import { Module } from '@nestjs/common';
+import { StoreModule } from '@libs/store';
+import { CoreModule, rootReducer, rootEpic } from '@core';
 import { AppController } from './app.controller';
-import { CoreModule } from './core/core.module';
-import { rootReducer, rootEpic } from './core/state';
-import { StoreModule } from './config/store';
 import { ItemModule } from './item/item.module';
 
 @Module({

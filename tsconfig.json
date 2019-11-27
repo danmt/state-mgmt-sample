@@ -9,7 +9,11 @@
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./",
-    "incremental": true
+    "incremental": true,
+    "paths": {
+      "@libs/store": ["./libs/store"],
+      "@core": ["./src/core"]
+    }
   },
   "exclude": ["node_modules", "dist"]
 }

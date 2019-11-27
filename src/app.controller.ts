@@ -1,6 +1,6 @@
 import { Controller, OnModuleInit } from '@nestjs/common';
-import { selectItemsTest } from './core/state';
-import { StoreService } from './config/store';
+import { StoreService } from '@libs/store';
+import { selectItemsTest } from '@core';
 
 @Controller()
 export class AppController implements OnModuleInit {

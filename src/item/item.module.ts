@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
+import { StoreModule } from '@libs/store';
+import { rootReducer, rootEpic } from '@core';
 import { ItemController } from './item.controller';
 import { ItemService } from './item.service';
-import { StoreModule } from '../config/store';
-import { rootReducer, rootEpic } from '../core/state';
 
 @Module({
   imports: [StoreModule.forRoot(rootReducer, rootEpic)],
