@@ -3,7 +3,5 @@ import { mapTo } from 'rxjs/operators';
 
 export const testAction = () => ({ type: 'test' });
 
-export const itemsEpic = action$ => action$.pipe(
-  ofType('test'),
-  mapTo({ type: 'done'}),
-);
+export const itemsEpic = action$ =>
+  action$.pipe(ofType('test'), mapTo({ type: 'done' }));

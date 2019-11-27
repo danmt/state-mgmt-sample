@@ -1,0 +1,16 @@
+{
+  "git.autofetch": true,
+  "typescript.updateImportsOnFileMove.enabled": "never",
+  "editor.tabSize": 2,
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/node_modules/*/**": true
+  },
+  "editor.formatOnSave": true,
+  "editor.fontSize": 16,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always"
+}

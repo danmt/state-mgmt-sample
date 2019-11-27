@@ -5,17 +5,18 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { fromStore } from '../common';
 
+let counter = 0;
 @Injectable()
 export class StoreService<T> {
   private epicMiddleware = createEpicMiddleware();
   private store: Store<any>;
   private state$: Observable<any>;
 
+  public counter: number;
+
   constructor(reducer: Reducer, epic: Epic) {
-    this.store = createStore(
-      reducer,
-      applyMiddleware(this.epicMiddleware),
-    );
+    this.counter = counter += 1;
+    this.store = createStore(reducer, applyMiddleware(this.epicMiddleware));
     this.epicMiddleware.run(epic);
     this.state$ = fromStore<T>(this.store as any);
   }
