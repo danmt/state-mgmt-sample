@@ -1,11 +1,11 @@
 import { Controller, Get } from '@nestjs/common';
 import { AppService } from './app.service';
-import { StoreService } from './config/store';
 import { selectItemsTest } from './core/state';
+import { StoreService } from './config/store';
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService, private readonly store: StoreService) {}
+  constructor(private readonly appService: AppService, private readonly store: StoreService<any>) {}
 
   @Get()
   getHello(): string {

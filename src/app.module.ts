@@ -2,11 +2,12 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { CoreModule } from './core/core.module';
-import { StoreService } from './config/store';
+import { rootReducer, rootEpic } from './core/state';
+import { StoreModule } from './config/store/store.module';
 
 @Module({
-  imports: [CoreModule],
+  imports: [CoreModule, StoreModule.forRoot(rootReducer, rootEpic)],
   controllers: [AppController],
-  providers: [AppService, StoreService],
+  providers: [AppService],
 })
 export class AppModule {}
