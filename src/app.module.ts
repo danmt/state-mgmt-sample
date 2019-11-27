@@ -3,7 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { CoreModule } from './core/core.module';
 import { rootReducer, rootEpic } from './core/state';
-import { StoreModule } from './config/store/store.module';
+import { StoreModule } from './config/store';
 
 @Module({
   imports: [CoreModule, StoreModule.forRoot(rootReducer, rootEpic)],
