@@ -1,14 +1,15 @@
 import { Controller, OnModuleInit } from '@nestjs/common';
 import { StoreService } from '@libs/store';
-import { selectItemsTest } from '@core';
+import { fromRoot } from '@core';
+import { Item } from '@models';
 
 @Controller()
 export class AppController implements OnModuleInit {
-  constructor(private readonly store: StoreService<any>) {}
+  constructor(private readonly store: StoreService<fromRoot.State>) {}
 
   onModuleInit() {
     this.store
-      .select(selectItemsTest)
-      .subscribe(a => console.log('selector', a));
+      .select(fromRoot.selectItemsData)
+      .subscribe((item: Item) => console.log('item', item));
   }
 }

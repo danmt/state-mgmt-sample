@@ -1,8 +1,13 @@
+import { createSelector } from 'reselect';
 import { combineEpics } from 'redux-observable';
 import { combineReducers } from 'redux';
 import { itemsEpic } from './items.effects';
 import * as fromItems from './items.reducer';
-import { createSelector } from 'reselect';
+import { ItemEntity } from '@models';
+
+export interface State {
+  items: ItemEntity;
+}
 
 export const rootEpic = combineEpics(itemsEpic);
 
@@ -10,8 +15,8 @@ export const rootReducer = combineReducers({
   items: fromItems.reducer,
 });
 
-export const selectItems = (state: any) => state.items;
-export const selectItemsTest = createSelector(
+export const selectItems = (state: State) => state.items;
+export const selectItemsData = createSelector(
   selectItems,
-  fromItems.selectItemsTest,
+  fromItems.selectItemsData,
 );

@@ -1,14 +1,20 @@
-export const reducer = (state = { test: null }, action) => {
+import { Item } from '@models';
+
+export interface State {
+  data?: Item;
+}
+
+export const reducer = (state: State = {}, action) => {
   switch (action.type) {
     case 'test':
-      return { test: true };
+      return { ...state, data: { ...state.data, test: true } };
 
     case 'done':
-      return { test: false };
+      return { ...state, data: { ...state.data, test: false } };
 
     default:
       return state;
   }
 };
 
-export const selectItemsTest = (items: any) => items.test;
+export const selectItemsData = (state: State) => state.data;

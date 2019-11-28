@@ -12,7 +12,8 @@
     "incremental": true,
     "paths": {
       "@libs/store": ["./libs/store"],
-      "@core": ["./src/core"]
+      "@core": ["./src/core"],
+      "@models": ["./src/core/models"]
     }
   },
   "exclude": ["node_modules", "dist"]
