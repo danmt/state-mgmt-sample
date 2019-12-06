@@ -8,6 +8,8 @@
   },
   "editor.formatOnSave": true,
   "editor.fontSize": 16,
+  "editor.fontFamily": "Fira Code",
+  "editor.fontLigatures": true,
   "diffEditor.ignoreTrimWhitespace": false,
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
